@@ -21,9 +21,9 @@ const VaccinationByGender = props => {
             paddingAngle={0}
             dataKey="count"
           >
-            <Cell name="Male" fill="#f54394" />
-            <Cell name="Female" fill="#5a8dee" />
-            <Cell name="Others" fill="#2cc6c6" />
+            <Cell name={data.vaccination_by_gender[0].gender} fill="#f54394" />
+            <Cell name={data.vaccination_by_gender[1].gender} fill="#5a8dee" />
+            <Cell name={data.vaccination_by_gender[2].gender} fill="#2cc6c6" />
           </Pie>
           <Legend
             iconType="circle"

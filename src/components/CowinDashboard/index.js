@@ -27,7 +27,6 @@ class CowinDashboard extends Component {
     const options = {
       method: 'GET',
     }
-    // try {
     const response = await fetch(
       'https://apis.ccbp.in/covid-vaccination-data',
       options,
@@ -38,25 +37,16 @@ class CowinDashboard extends Component {
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
-    // } catch (err) {
-    //   this.setState({apiStatus: apiStatusConstants.failure})
-    //   console.log(err.message)
-    // }
   }
 
-  renderLoadingView = () => {
-    const {apiStatus} = this.state
-    console.log({apiStatus})
-    return (
-      <div testid="loader" className="loader-container">
-        <Loader type="ThreeDots" color="#ffffff" height={80} width={80} />
-      </div>
-    )
-  }
+  renderLoadingView = () => (
+    <div testid="loader" className="loader-container">
+      <Loader type="ThreeDots" color="#ffffff" height={80} width={80} />
+    </div>
+  )
 
   renderSuccessView = () => {
-    const {data, apiStatus} = this.state
-    console.log({apiStatus})
+    const {data} = this.state
 
     return (
       <div className="data-bg-container">
@@ -67,20 +57,16 @@ class CowinDashboard extends Component {
     )
   }
 
-  renderFailureView = () => {
-    const {apiStatus} = this.state
-    console.log({apiStatus})
-    return (
-      <div className="bg-container">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/api-failure-view.png"
-          alt="failure view"
-          className="failed-img"
-        />
-        <h1 className="error-msg">Something went wrong</h1>
-      </div>
-    )
-  }
+  renderFailureView = () => (
+    <div className="bg-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/api-failure-view.png"
+        alt="failure view"
+        className="failed-img"
+      />
+      <h1 className="error-msg">Something went wrong</h1>
+    </div>
+  )
 
   renderMainView = () => {
     const {apiStatus} = this.state
