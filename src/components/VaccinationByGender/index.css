@@ -1,0 +1,11 @@
+.vaccination-by-gender-container {
+  background-color: #1c1c2b;
+  padding: 3% 10%;
+  width: 800px;
+  margin-bottom: 20px;
+}
+.component-title {
+  font-size: 26px;
+  padding-left: 16px;
+  color: #cbd5e1;
+}
