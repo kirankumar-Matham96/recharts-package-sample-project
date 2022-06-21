@@ -4,13 +4,17 @@ import './index.css'
 const VaccinationByGender = props => {
   const {data} = props
 
+  const updatedData = {
+    vaccinationByGender: data.vaccination_by_gender,
+  }
+
   return (
     <div className="vaccination-by-gender-container">
       <h1 className="component-title">Vaccination by gender</h1>
       <ResponsiveContainer height={400}>
         <PieChart width={800} height={400}>
           <Pie
-            data={data.vaccination_by_gender}
+            data={updatedData.vaccinationByGender}
             cx="50%"
             cy="50%"
             startAngle={180}
@@ -21,9 +25,18 @@ const VaccinationByGender = props => {
             paddingAngle={0}
             dataKey="count"
           >
-            <Cell name={data.vaccination_by_gender[0].gender} fill="#f54394" />
-            <Cell name={data.vaccination_by_gender[1].gender} fill="#5a8dee" />
-            <Cell name={data.vaccination_by_gender[2].gender} fill="#2cc6c6" />
+            <Cell
+              name={updatedData.vaccinationByGender[0].gender}
+              fill="#f54394"
+            />
+            <Cell
+              name={updatedData.vaccinationByGender[1].gender}
+              fill="#5a8dee"
+            />
+            <Cell
+              name={updatedData.vaccinationByGender[2].gender}
+              fill="#2cc6c6"
+            />
           </Pie>
           <Legend
             iconType="circle"

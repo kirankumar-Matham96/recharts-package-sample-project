@@ -11,6 +11,11 @@ import './index.css'
 
 const VaccinationCoverage = props => {
   const {data} = props
+  //   console.log(data)
+
+  const updatedData = {
+    last7DaysVaccination: data.last_7_days_vaccination,
+  }
 
   const DataFormatter = number => {
     if (number > 1000) {
@@ -26,7 +31,7 @@ const VaccinationCoverage = props => {
         <BarChart
           width={500}
           height={300}
-          data={data.last_7_days_vaccination}
+          data={updatedData.last7DaysVaccination}
           margin={{
             top: 5,
             right: 30,
